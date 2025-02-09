@@ -1,0 +1,43 @@
+-- Node: Run JavaScript Everywhere
+Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.
+
+-- NPM - Node Package Manager
+npm is a package manager for the JavaScript programming language maintained by npm, Inc., a subsidiary of GitHub. npm is the default package manager for the JavaScript runtime environment Node.js and is included as a recommended feature in the Node.js installer.
+
+It consists of a command line client, also called npm, and an online database of public and paid-for private packages, called the npm registry. The registry is accessed via the client, and the available packages can be browsed and searched via the npm website. The package manager and the registry are managed by npm, Inc.
+
+whenever we install some dependecy, library, framework or package etc, the dependecies are installed/showing in the package.json file with the name and version. The express files and also the other required files will be installed in the node modules folder separately.
+
+
+-- Node Modules
+node module is a folder which is created when we install package, dependency etc in our project. these are all the files which are required for that dependecy, library, framework or package etc. For example when we install express from node
+
+command: npm install express
+
+then in the node_modules folder the required files for express will also be installed.
+
+Uninstalling command
+command: npm uninstall express (or any other installed lib, framework, etc)
+
+
+-- dependecies  -- packages, or package dependecies.
+-- devdependencies -- Those packcages which are only required for development but not in deployments. Means we will not use them when our site is live.
+
+
+-- Nodemon
+Nodemon is a utility depended on by over 3 million projects, that will monitor for any changes in your source and automatically restart your server. Perfect for development.
+
+nodemon  --  install this through command to serve the live server only once. Means we have not to start the server again and again.
+
+command: npm install -g nodemon   (global install one time)
+command: npm i nodemon --save-dev  (install as devdependency)
+command: npx nodemon filename    (to run)
+
+
+
+
+
+
+
+
+

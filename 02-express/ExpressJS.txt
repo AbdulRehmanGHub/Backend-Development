@@ -1,0 +1,7 @@
+ExpressJS
+
+ExpressJS is a npm package
+Express is a JavaScript framework
+Managing all the things from receiving the request and giving the response
+
+
