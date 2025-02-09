@@ -1,0 +1,6 @@
+HTTP - Hypertext Transfer Protocol
+Protocol means rules
+
+HTTP - Hypertext Transfer Protocol (HTTP) is a set of rules that govern communication between a web browser and a web server. It's the foundation of data exchange on the web, allowing users to read documents like HTML, images, and videos.
+
+Internet rules are predefined in our Operating System.
