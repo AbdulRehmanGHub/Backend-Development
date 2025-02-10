@@ -1,0 +1,19 @@
+form handling, sessions, cookies etc
+
+-- Form Handling.
+to handle the backend process of data coming from any frontend source, library, frameworks, files etc.
+
+--Session
+We can put our data on frontend and whenever we request backend, the data from frontend saved in backend. Session make sure to keep the data in mind whenever the user again request it.
+
+For example: User Authentications - user one time login and then close the browser, whenever the user open the website again he/she should be logged in. No need to login again and again.
+
+So, we can say that from user login to user logout, this is a session.
+
+--Cookie
+
+
+-- Cookie Parser
+Parse Cookie header and populate req.cookies with an object keyed by the cookie names. Optionally you may enable signed cookie support by passing a secret string, which assigns req.secret so it may be used by other middleware.
+
+command: npm i cookie-parser
