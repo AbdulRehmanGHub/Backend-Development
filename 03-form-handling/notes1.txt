@@ -1,0 +1,30 @@
+setting up parsers for form
+    -- already covered before, just setting up the express connection/json/urlencoded.
+
+setting up ejs for ejs pages
+    -- EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. No religiousness about how to organize things.
+    -- install command: npm i ejs
+    -- setup ejs as a view engine
+
+    <!-- syntax for dynamic coding with html <%= logic / JS %> -->
+    Example:    <h1>hi <%= 2+9 %></h1>
+
+setting up public static files
+    -- create a public folder and then create another folders inside it like images, scripts etc.
+    -- app.use(express.static(path.join(__dirname, `public`)));
+
+Dynamic Routing
+    -- Dynamic Routing
+    Routes where the some parts are same and few are change
+        --Example:
+        --/user/abdul
+        --/user/abc
+        --/user/xyz
+        --We can see that the there are many users but the route is starting from /user/---. This is called dynamic routing where we can create 1 single dynamic route and change the page data accordingly.
+
+        -- http://localhost:3000/profile/abdul/23
+        -- res.send(`Welcome ${req.params.name}. Your age is ${req.params.age}`);
+
+    -- How to get data coming from frontend at backend route
+
+
