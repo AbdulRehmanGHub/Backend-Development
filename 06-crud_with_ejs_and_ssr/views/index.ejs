@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Creator App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-zinc-900 text-white min-h-screen">
+    <div class="md:px-10 md:py-8 px-2 py-4">
+      <nav>
+        <a
+          href="/read"
+          class="bg-blue-700 px-2 py-1 rounded-md hover:bg-blue-800 transition-colors duration-300"
+        >
+          View all users &rarr;
+        </a>
+      </nav>
+
+      <div class="py-12 text-center">
+        <h1 class="text-4xl font-bold mb-6">User Creator App</h1>
+
+        <form
+          action="/create"
+          method="POST"
+          class="max-w-md mx-auto bg-zinc-800 p-6 rounded-lg shadow-lg"
+        >
+          <div class="space-y-4">
+            <div>
+              <label class="block text-left mb-1">Name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Enter name"
+                class="bg-zinc-700 text-white border-[1px] border-gray-500 w-full px-3 outline-none py-2 rounded"
+              />
+            </div>
+
+            <div>
+              <label class="block text-left mb-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Enter email"
+                class="bg-zinc-700 text-white border-[1px] border-gray-500 w-full px-3 outline-none py-2 rounded"
+              />
+            </div>
+
+            <div>
+              <label class="block text-left mb-1">Image URL</label>
+              <input
+                type="url"
+                name="img_url"
+                required
+                placeholder="Enter image URL"
+                class="bg-zinc-700 text-white border-[1px] border-gray-500 w-full px-3 outline-none py-2 rounded"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-blue-700 hover:bg-blue-800 transition-colors duration-300 py-2 px-4 rounded font-semibold"
+            >
+              Create User
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
