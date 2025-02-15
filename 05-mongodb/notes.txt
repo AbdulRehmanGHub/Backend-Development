@@ -1,0 +1,33 @@
+Data Storage
+    -- A place where we can store the data or info of users.
+    -- We can store data in our files as well, but there is a problem. We cannot store data like video, audio, images in our regular files.
+    -- That's why storing data in files is not efficient.
+
+
+Database
+    -- To solve the issue of storing data(audio, text, video, images etc) database is here to help us.
+    -- This is efficient way.
+
+    Types of Databases (2 types)
+        -- SQL: Structured Query Language - store data in the form of tables. SQL is a standard language for storing, manipulating and retrieving data in databases.
+
+        -- NOSQL: Not only SQL is a database design approach that stores data in a non-tabular format. Data in the form of Objects / JSON.
+
+
+MongoDB
+    -- MongoDB is a document database. It stores data in a type of JSON format called BSON. It follows NOSQL way of storing data.
+
+
+    Terminologies -- Way of storage in MongoDB
+        -- Database --> Collections --> Document --> Data
+
+
+    Code -----------------------  Database
+
+    mongoose.connect   ->        database create
+    model create       ->        collection create
+    CREATE something   ->        document create
+
+
+
+
