@@ -1,0 +1,41 @@
+Authentication and Authorizaiton
+    -- Authentication | Before providing profile to the user, we need to know that who is a user.
+        Example - If user signup to the platform, the platform knows his email, name and other details. In simple words, the server forgets everytime that who is the user and we need to provide the details again and again to server. To handle this issue the Authentication process comes in.
+
+    -- Authorizaiton  | Authorized to perform some tasks which are only allowed to be executed by Admin.
+        Example - We know that admin have full access to the platform, like he can read/add/update/delete any product etc. But on the other hand users have only the read permissions. So, in simple words we can say that for how many things you are allowed/permit and not.
+
+
+Some important topics before Auth
+    -- Cookies:
+        Cookies are small data that are stored on a client side and sent to the client along with server requests. Cookies have various functionality, they can be used for maintaining sessions and adding user-specific features in your web app. For this, we will use cookie-parser module of npm which provides middleware for parsing of cookies.
+
+        -- instructions:
+            res.cookie("name", "abdul reh");        // create cookie
+            req.cookie      // read cookie
+
+        -- cookie-parser command:
+            npm i cookie-parser     // must use the app.use(cookieParser) before parsing
+
+
+    -- Bcrypt:
+        A library help us to hash passwords.
+        It basically convert our password in some other long format including integers, strings, symbols etc that no one can easily understand.
+        Use for security purposes to ensure no one can hack our account/password.
+
+        Example:
+            let say my password is "myPassword"
+            so it will be converted in this format like "$jfklsd9040943jdj049kjdf0943u3jdsf90rdfjdj3u"
+
+        -- bcrypt commnd:
+            npm i bcrypt
+
+
+
+    -- JSON Web Token(JWT):
+        JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
+        JWT.IO allows you to decode, verify and generate JWT.
+
+
+    command:
+        npm install jsonwebtoken
