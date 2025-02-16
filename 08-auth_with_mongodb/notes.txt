@@ -1,0 +1,11 @@
+
+Basic Structure
+    -- Create user Account
+        -- connect mongoose
+        -- implement schema
+        -- create and connect model
+        -- usercreate --> password --> hash
+        -- jwt token --> token
+    
+    -- Login
+        -- token --> decrypt --> email
