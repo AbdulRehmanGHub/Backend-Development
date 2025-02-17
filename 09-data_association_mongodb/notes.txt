@@ -1,0 +1,27 @@
+
+creating a post with user id or name etc.
+
+app.get("/post/create", async (req, res) => {
+  try {
+    // Create a user first (or ensure the user exists)
+    const user = await userModel.findOne({ username: "abdul" });
+    if (!user) {
+      return res.status(404).send("User not found");
+    }
+
+    // Create the post with the user's ID
+    const post = await postModel.create({
+      postdata: "this is post number 1",
+      user: user._id, // Use the user's actual ID
+    });
+
+    // Push the post ID into the user's posts array
+    user.posts.push(post._id);
+    await user.save();
+
+    res.send({ post, user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+});
