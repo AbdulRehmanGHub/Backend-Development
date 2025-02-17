@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Blog App | Backend</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body>
+    <div
+      class="bg-slate-900 text-white min-h-screen px-3 py-3 md:px-10 md:py-5"
+    >
+      <div class="top flex flex-col gap-4 pb-6">
+        <div class="">
+          <h2 class="text-3xl font-semibold">-- User Profile --</h2>
+        </div>
+
+        <div class="welcomeMsg flex items-center justify-between">
+          <h3>Hi, <span class="text-teal-300"><%= user.name %> 👋</span></h3>
+          <a
+            href="/logout"
+            class="bg-red-700 hover:bg-red-800 px-2 rounded-md inline-flex items-center justify-center"
+            >Logout</a
+          >
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <div class="blogSection flex flex-col gap-3">
+          <span class="text-xl">Create a new blog</span>
+          <form action="/blog" method="post">
+            <textarea
+              name="content"
+              class="resize-none bg-slate-800 border-[1px] outline-none px-1 py-1 mb-3 w-full md:w-1/3 h-40"
+              placeholder="write blog here..."
+            ></textarea>
+            <input
+              type="submit"
+              value="Post Now"
+              class="block text-xl bg-blue-700 hover:bg-blue-800 duration-200 rounded-md cursor-pointer w-full md:w-1/3"
+            />
+          </form>
+
+          <hr class="my-5 text-slate-800" />
+
+          <div class="blogs">
+            <span class="text-2xl mb-8 inline-block">All Blogs</span>
+
+            <div class="flex items-start justify-center flex-wrap gap-8">
+              <% user.posts.reverse().forEach(function(blog) { %>
+              <div
+                class="border-[1px] p-1 w-full md:w-1/4 rounded-sm shadow-2xl hover:shadow-xl cursor-pointer shadow-slate-950"
+              >
+                <div class="flex flex-col gap-2">
+                  <p>
+                    <span>author:</span>
+                    <span class="text-slate-400">@<%= user.username %></span>
+                  </p>
+                  <p class="text-sm"><%= blog.content %></p>
+                </div>
+
+                <div class="mt-4 flex items-center gap-4">
+                  <a
+                    href="#"
+                    class="bg-blue-600 hover:bg-blue-700 px-2 rounded-sm"
+                    >Like 👍</a
+                  >
+                  <a
+                    href="#"
+                    class="bg-teal-600 hover:bg-teal-700 px-2 rounded-sm"
+                    >Edit ✏</a
+                  >
+                </div>
+              </div>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
