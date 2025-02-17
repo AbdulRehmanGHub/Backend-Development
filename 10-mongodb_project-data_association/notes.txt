@@ -1,0 +1,17 @@
+Concept of middleware and protected route
+    Protected Route: User must be logged in to access the pages / dashboards etc. I have used the concept that if user has a token there after loggin in then he/she can access this profile page, if the token is blank or no token user cannot access this page. So, this whole concept is called protected routing and profile page is protected route.
+
+app.get("/profile", isLoggedIn, (req, res) => {
+  console.log(req.user);
+  res.send("Profile page");
+    res.render("login");
+});
+
+function isLoggedIn(req, res, next) {
+  if (req.cookies.token === "") res.send("You must be logged in!");
+  else {
+    let data = jwt.verify(req.cookies.token, "secretkey");
+    req.user = data;
+  }
+  next();
+}
