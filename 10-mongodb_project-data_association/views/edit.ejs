@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Blog App | Backend</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body>
+    <div
+      class="bg-slate-900 text-white min-h-screen px-3 py-3 md:px-10 md:py-5"
+    >
+      <div class="top flex flex-col gap-4 pb-6">
+        <div class="">
+          <h2 class="text-3xl font-semibold">-- User Profile --</h2>
+        </div>
+
+        <div class="welcomeMsg flex items-center justify-between">
+          <h3>Hi, <span class="text-teal-300"> <%= user.name %> 👋</span></h3>
+          <a
+            href="/logout"
+            class="bg-red-700 hover:bg-red-800 px-2 rounded-md inline-flex items-center justify-center"
+            >Logout</a
+          >
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <div class="blogSection flex flex-col gap-3">
+          <span class="text-xl">Update your blog here</span>
+          <form action="/update/<%= blog._id  %>" method="post">
+            <textarea
+              name="content"
+              class="resize-none bg-slate-800 border-[1px] outline-none px-1 py-1 mb-3 w-full md:w-1/3 h-40"
+            >
+<%= blog.content  %> </textarea
+            >
+            <input
+              type="submit"
+              value="Update Blog"
+              class="block text-xl bg-teal-700 hover:bg-teal-800 duration-200 rounded-md cursor-pointer w-full md:w-1/3"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

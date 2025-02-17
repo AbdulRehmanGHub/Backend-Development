@@ -1,3 +1,16 @@
+## BLOG app with Backend - Node JS, Express, MongoDB
+  Features:
+      -- user can register      // with proper auth and validations.
+      -- user can login         // make sure only access to same logged in user.
+      -- user can create post   // store in mongodb.
+      -- user can read post
+      -- user can update post
+      -- user can delete post
+      -- good looking design with ejs
+
+      -- techs and tools: nodejs, express, mongodb, jwt, cookies, ejs and more.
+
+
 Concept of middleware and protected route
     Protected Route: User must be logged in to access the pages / dashboards etc. I have used the concept that if user has a token there after loggin in then he/she can access this profile page, if the token is blank or no token user cannot access this page. So, this whole concept is called protected routing and profile page is protected route.
 

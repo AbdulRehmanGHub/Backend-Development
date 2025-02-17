@@ -62,12 +62,13 @@
 
                 <div class="mt-4 flex items-center gap-4">
                   <a
-                    href="#"
+                    href="/like/<%= blog._id %>"
                     class="bg-blue-600 hover:bg-blue-700 px-2 rounded-sm"
-                    >Like 👍</a
+                  >
+                    <%= blog.likes.length %> Like 👍</a
                   >
                   <a
-                    href="#"
+                    href="/edit/<%= blog._id %>"
                     class="bg-teal-600 hover:bg-teal-700 px-2 rounded-sm"
                     >Edit ✏</a
                   >

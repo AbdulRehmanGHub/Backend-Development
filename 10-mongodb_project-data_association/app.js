@@ -5,6 +5,7 @@ const userModel = require("./models/user");
 const postModel = require("./models/post");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const post = require("./models/post");
 
 app.set("view engine", "ejs");
 app.use(express.json());
@@ -26,6 +27,34 @@ app.get("/profile", isLoggedIn, async (req, res) => {
     .populate({ path: "posts" });
 
   res.render("profile", { user });
+});
+
+app.get("/like/:id", isLoggedIn, async (req, res) => {
+  let blog = await postModel.findOne({ _id: req.params.id }).populate("user");
+
+  if (blog.likes.indexOf(req.user.userid) === -1) {
+    blog.likes.push(req.user.userid);
+  } else {
+    blog.likes.splice(blog.likes.indexOf(req.user.userid), 1);
+  }
+  await blog.save();
+  res.redirect("/profile");
+});
+
+app.get("/edit/:id", isLoggedIn, async (req, res) => {
+  let user = await userModel.findOne({ email: req.user.email });
+  let blog = await postModel.findOne({ _id: req.params.id }).populate("user");
+
+  res.render("edit", { blog, user });
+});
+
+app.post("/update/:id", isLoggedIn, async (req, res) => {
+  let blog = await postModel.findOneAndUpdate(
+    { _id: req.params.id },
+    { content: req.body.content }
+  );
+
+  res.redirect("/profile");
 });
 
 app.post("/blog", isLoggedIn, async (req, res) => {
