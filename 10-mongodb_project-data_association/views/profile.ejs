@@ -17,7 +17,19 @@
         </div>
 
         <div class="welcomeMsg flex items-center justify-between">
-          <h3>Hi, <span class="text-teal-300"><%= user.name %> 👋</span></h3>
+          <div class="flex items-center justify-center gap-2">
+            <div class="md:w-10 md:h-10 w-7 h-7 rounded-full overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="/images/uploads/<%= user.profilepic %>"
+                alt="logo"
+              />
+            </div>
+            <div>
+              <span>Hi,</span>
+              <span class="text-teal-300"><%= user.name %> 👋</span>
+            </div>
+          </div>
           <a
             href="/logout"
             class="bg-red-700 hover:bg-red-800 px-2 rounded-md inline-flex items-center justify-center"
