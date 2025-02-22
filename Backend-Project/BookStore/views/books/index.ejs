@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookStore</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-slate-800 text-slate-100">
+    <div class="container px-10 min-h-screen">
+      <h2 class="text-2xl font-semibold pt-8 pb-5">All Books</h2>
+
+      <a href="./new" class="inline-block mb-6">
+        <button
+          class="border-[1px] border-black px-2 py-1 rounded-md bg-slate-950 hover:bg-slate-900 duration-300 cursor-pointer"
+        >
+          Add New Book
+        </button>
+      </a>
+
+      <ul>
+        <% allBooks.forEach((book, index) => { %>
+        <li class="my-3">
+          <span><%= index %></span>
+          <a
+            class="shadow-md hover:shadow-md hover:shadow-slate-700 duration-300"
+            href="/book/<%= book._id %>"
+            ><%= book.title %></a
+          >
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+  </body>
+</html>

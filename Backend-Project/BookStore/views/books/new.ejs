@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookStore</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-slate-800 text-slate-100">
+    <div class="container px-10 min-h-screen min-w-screen">
+      <h2 class="text-2xl font-semibold pt-8 pb-5">Add New Book</h2>
+
+      <a href="/books" class="inline-block my-6">
+        <button
+          class="border-[1px] border-black px-2 py-1 rounded-md bg-slate-950 hover:bg-slate-900 duration-300 cursor-pointer"
+        >
+          Back to Books
+        </button>
+      </a>
+
+      <form class="block w-5xl" action="/books" method="post">
+        <input
+          class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
+          type="text"
+          name="book[title]"
+          required
+          placeholder="book title"
+        />
+        <input
+          class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
+          type="text"
+          name="book[description]"
+          required
+          placeholder="book description"
+        />
+        <input
+          class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
+          type="text"
+          name="book[image]"
+          required
+          placeholder="book image url"
+        />
+        <input
+          class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
+          type="text"
+          name="book[author]"
+          required
+          placeholder="book author"
+        />
+        <input
+          class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
+          type="text"
+          name="book[language]"
+          required
+          placeholder="book language"
+        />
+        <input
+          class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
+          type="number"
+          name="book[price]"
+          required
+          placeholder="book price"
+        />
+        <input
+          class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black rounded-md cursor-pointer bg-slate-900 hover:bg-slate-950 duration-300"
+          type="submit"
+          value="Add Book"
+        />
+      </form>
+    </div>
+  </body>
+</html>
