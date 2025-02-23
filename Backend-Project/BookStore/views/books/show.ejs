@@ -26,13 +26,22 @@
         <li><%= aBook.language %></li>
         <li>Rs. <%= aBook.price.toLocaleString() %></li>
       </ul>
-      <a href="/book/<%=aBook._id%>/edit" class="inline-block my-6">
-        <button
-          class="border-[1px] border-black px-2 py-1 rounded-md bg-teal-800 hover:bg-teal-900 duration-300 cursor-pointer"
-        >
-          Edit Book
-        </button>
-      </a>
+      <div class="flex items-center gap-4">
+        <a href="/book/<%=aBook._id%>/edit" class="inline-block my-6">
+          <button
+            class="border-[1px] border-black px-2 py-1 rounded-md bg-teal-800 hover:bg-teal-900 duration-300 cursor-pointer"
+          >
+            Edit Book
+          </button>
+        </a>
+        <form method="post" action="/book/<%=aBook._id%>?_method=DELETE" class="inline-block my-6">
+          <button
+            class="border-[1px] border-black px-2 py-1 rounded-md bg-red-700 hover:bg-red-800 duration-300 cursor-pointer"
+          >
+            Delete Book
+          </button>
+        </form>
+      </div>
     </div>
   </body>
 </html>

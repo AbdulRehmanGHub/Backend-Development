@@ -49,8 +49,9 @@ app.get("/new", (req, res) => {
 
 // add new book route
 app.post("/books", async (req, res) => {
-  // let {title, description, image, author, language, price} = req.body;  // already classified in new.ejs file
-  //   let book = req.body.book;
+  // // already classified in new.ejs file -- we can destructer it here as well.
+  //  let {title, description, image, author, language, price} = req.body;
+  //  let book = req.body.book;
   //   console.log(book);
 
   const newBook = new book(req.body.book);
@@ -70,6 +71,14 @@ app.put("/book/:id", async (req, res) => {
   let { id } = req.params;
   await book.findByIdAndUpdate(id, { ...req.body.book });
   res.redirect(`/book/${id}`);
+});
+
+// // delete route
+app.delete("/book/:id", async (req, res) => {
+  let { id } = req.params;
+  const deletedBook = await book.findByIdAndDelete(id);
+  console.log(deletedBook);
+  res.redirect(`/books`);
 });
 
 // // testlising route
