@@ -8,7 +8,7 @@
   </head>
   <body class="bg-slate-800 text-slate-100">
     <div class="container px-10 min-h-screen min-w-screen">
-      <h2 class="text-2xl font-semibold pt-8 pb-5">Add New Book</h2>
+      <h2 class="text-2xl font-semibold pt-8 pb-5">Edit Book</h2>
 
       <a href="/books" class="inline-block my-6">
         <button
@@ -18,53 +18,57 @@
         </button>
       </a>
 
-      <form class="block w-5xl" action="/books" method="post">
+      <form
+        class="block w-5xl"
+        method="POST"
+        action="/book/<%= aBook._id %>?_method=PUT"
+      >
         <input
           class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
           type="text"
           name="book[title]"
+          value="<%= aBook.title %>"
           required
-          placeholder="book title"
         />
         <input
           class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
           type="text"
           name="book[description]"
           required
-          placeholder="book description"
+          value="<%= aBook.description %>"
         />
         <input
           class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
           type="text"
           name="book[image]"
           required
-          placeholder="book image url"
+          value="<%= aBook.image %>"
         />
         <input
           class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
           type="text"
           name="book[author]"
           required
-          placeholder="book author"
+          value="<%= aBook.author %>"
         />
         <input
           class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
           type="text"
           name="book[language]"
           required
-          placeholder="book language"
+          value="<%= aBook.language %>"
         />
         <input
           class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
           type="number"
           name="book[price]"
           required
-          placeholder="book price"
+          value="<%= aBook.price %>"
         />
         <input
           class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black rounded-md cursor-pointer bg-teal-800 hover:bg-teal-900 duration-300"
           type="submit"
-          value="Add Book"
+          value="Update Book"
         />
       </form>
     </div>

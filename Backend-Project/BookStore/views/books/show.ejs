@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </head>
   <body class="bg-slate-800 text-slate-100">
-    <div class="container px-10 min-h-screen min-w-screen">
+    <div class="container px-10 min-h-screen">
       <h2 class="text-2xl font-semibold pt-8 pb-5">Book Details</h2>
 
       <a href="/books" class="inline-block my-6">
@@ -26,6 +26,13 @@
         <li><%= aBook.language %></li>
         <li>Rs. <%= aBook.price.toLocaleString() %></li>
       </ul>
+      <a href="/book/<%=aBook._id%>/edit" class="inline-block my-6">
+        <button
+          class="border-[1px] border-black px-2 py-1 rounded-md bg-teal-800 hover:bg-teal-900 duration-300 cursor-pointer"
+        >
+          Edit Book
+        </button>
+      </a>
     </div>
   </body>
 </html>

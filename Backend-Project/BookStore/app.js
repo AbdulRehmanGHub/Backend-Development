@@ -3,10 +3,12 @@ const app = express();
 const mongoose = require("mongoose");
 const book = require("./models/book");
 const path = require("path");
+const methodOverride = require("method-override");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 const Mongo_URL = "mongodb://127.0.0.1:27017/bookstore";
 
@@ -45,6 +47,7 @@ app.get("/new", (req, res) => {
   res.render("./books/new.ejs");
 });
 
+// add new book route
 app.post("/books", async (req, res) => {
   // let {title, description, image, author, language, price} = req.body;  // already classified in new.ejs file
   //   let book = req.body.book;
@@ -53,6 +56,20 @@ app.post("/books", async (req, res) => {
   const newBook = new book(req.body.book);
   await newBook.save();
   res.redirect("/books");
+});
+
+// // edit route
+app.get("/book/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  const aBook = await book.findById(id);
+  res.render("books/edit.ejs", { aBook });
+});
+
+// // update route
+app.put("/book/:id", async (req, res) => {
+  let { id } = req.params;
+  await book.findByIdAndUpdate(id, { ...req.body.book });
+  res.redirect(`/book/${id}`);
 });
 
 // // testlising route
