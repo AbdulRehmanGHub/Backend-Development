@@ -57,3 +57,7 @@
 ## Multer
 <h3>A node.js middleware for handling multipart/form-data</h3>
 <p>Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency. NOTE: Multer will not process any form which is not multipart (multipart/form-data).</p>
+
+## EJS Mate
+<h3>Code Reusability - makking a default template for all pages</h3>
+<p>By using EJS templates, we can create reusable components or partials that can be included in multiple pages. This promotes code modularity and reduces duplication in our web applications.</p>
