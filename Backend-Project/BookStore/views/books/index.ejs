@@ -1,27 +1,63 @@
 <% layout("/layouts/boilerplate") %>
 <body class="bg-slate-800 text-slate-100">
-  <div class="container px-10 min-h-screen">
-    <h2 class="text-2xl font-semibold pt-8 pb-5">All Books</h2>
+  <div class="min-h-screen">
+    <div class="px-4 md:px-10">
+      <div class="flex items-center justify-between py-8">
+        <h2 class="text-2xl font-semibold">All Books</h2>
+        <a href="./new" class="inline-block">
+          <button
+            class="px-4 py-2 text-sm font-medium transition-colors duration-200 bg-slate-700 rounded-lg hover:bg-slate-600 cursor-pointer"
+          >
+            Add New Book
+          </button>
+        </a>
+      </div>
+    </div>
 
-    <a href="./new" class="inline-block mb-6">
-      <button
-        class="border-[1px] border-black px-2 py-1 rounded-md bg-slate-950 hover:bg-slate-900 duration-300 cursor-pointer"
-      >
-        Add New Book
-      </button>
-    </a>
-
-    <ul>
-      <% allBooks.forEach((book, index) => { %>
-      <li class="my-3">
-        <span><%= index %></span>
-        <a
-          class="shadow-md hover:shadow-md hover:shadow-slate-700 duration-300"
-          href="/book/<%= book._id %>"
-          ><%= book.title %></a
+    <div class="px-4 md:px-10 pb-8">
+      <div class="flex flex-wrap justify-center gap-6">
+        <% allBooks.forEach((book, index) => { %>
+        <div
+          class="w-72 bg-slate-700/30 rounded-lg overflow-hidden hover:bg-slate-700/50 transition-colors duration-200"
         >
-      </li>
-      <% }); %>
-    </ul>
+          <a href="/book/<%= book._id %>" class="block">
+            <div class="relative pt-[70%] bg-slate-900">
+              <img
+                class="absolute top-0 left-0 w-full h-full object-cover"
+                src="<%= book.image %>"
+                alt="<%= book.title %> cover"
+              />
+            </div>
+          </a>
+          <div class="p-4 space-y-3">
+            <h3 class="text-lg font-medium truncate"><%= book.title %></h3>
+            <p class="text-lg font-semibold text-sky-400">
+              PKR <%= book.price.toLocaleString() %>
+            </p>
+            <a
+              href="/book/<%= book._id %>"
+              class="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium transition-colors duration-200 bg-sky-600 rounded-lg hover:bg-sky-700"
+            >
+              View Details
+              <svg
+                class="w-4 h-4 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
   </div>
 </body>

@@ -1,64 +1,83 @@
 <% layout("/layouts/boilerplate") %>
 <body class="bg-slate-800 text-slate-100">
-  <div class="container px-10 min-h-screen min-w-screen">
-    <h2 class="text-2xl font-semibold pt-8 pb-5">Add New Book</h2>
+  <div class="min-h-screen px-4 md:px-10 py-8 max-w-7xl mx-auto">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-semibold">Add New Book</h2>
+      <a href="/books" class="inline-block">
+        <button
+          class="px-4 py-2 text-sm font-medium transition-colors duration-200 bg-slate-700 rounded-lg hover:bg-slate-600 cursor-pointer"
+        >
+          Back to Books
+        </button>
+      </a>
+    </div>
 
-    <a href="/books" class="inline-block my-6">
+    <form class="max-w-2xl mx-auto space-y-4" action="/books" method="post">
+      <div class="space-y-2">
+        <input
+          class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all duration-200 placeholder-slate-400"
+          type="text"
+          name="book[title]"
+          required
+          placeholder="Book Title"
+        />
+      </div>
+
+      <div class="space-y-2">
+        <input
+          class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all duration-200 placeholder-slate-400"
+          type="text"
+          name="book[description]"
+          required
+          placeholder="Book Description"
+        />
+      </div>
+
+      <div class="space-y-2">
+        <input
+          class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all duration-200 placeholder-slate-400"
+          type="text"
+          name="book[image]"
+          placeholder="Book Image URL"
+        />
+      </div>
+
+      <div class="space-y-2">
+        <input
+          class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all duration-200 placeholder-slate-400"
+          type="text"
+          name="book[author]"
+          required
+          placeholder="Book Author"
+        />
+      </div>
+
+      <div class="space-y-2">
+        <input
+          class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all duration-200 placeholder-slate-400"
+          type="text"
+          name="book[language]"
+          required
+          placeholder="Book Language"
+        />
+      </div>
+
+      <div class="space-y-2">
+        <input
+          class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all duration-200 placeholder-slate-400"
+          type="number"
+          name="book[price]"
+          required
+          placeholder="Book Price"
+        />
+      </div>
+
       <button
-        class="border-[1px] border-black px-2 py-1 rounded-md bg-slate-950 hover:bg-slate-900 duration-300 cursor-pointer"
-      >
-        Back to Books
-      </button>
-    </a>
-
-    <form class="block w-5xl" action="/books" method="post">
-      <input
-        class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
-        type="text"
-        name="book[title]"
-        required
-        placeholder="book title"
-      />
-      <input
-        class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
-        type="text"
-        name="book[description]"
-        required
-        placeholder="book description"
-      />
-      <input
-        class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
-        type="text"
-        name="book[image]"
-        required
-        placeholder="book image url"
-      />
-      <input
-        class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
-        type="text"
-        name="book[author]"
-        required
-        placeholder="book author"
-      />
-      <input
-        class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
-        type="text"
-        name="book[language]"
-        required
-        placeholder="book language"
-      />
-      <input
-        class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black"
-        type="number"
-        name="book[price]"
-        required
-        placeholder="book price"
-      />
-      <input
-        class="px-2 py-1 my-2 w-full outline-none border-[1px] border-black rounded-md cursor-pointer bg-teal-800 hover:bg-teal-900 duration-300"
         type="submit"
-        value="Add Book"
-      />
+        class="w-full px-4 py-2 mt-6 font-medium text-white transition-colors duration-200 bg-teal-600 rounded-lg hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-slate-800 cursor-pointer"
+      >
+        Add Book
+      </button>
     </form>
   </div>
 </body>
